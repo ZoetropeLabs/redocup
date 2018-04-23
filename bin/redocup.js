@@ -35,8 +35,6 @@ function startServer(program) {
   const html = loadHTML(program);
   const port = program.port || 5000;
 
-  app.use('/assets/redoc', express.static(__dirname + '/../node_modules/redoc/dist'))
-
   app.get('/spec.json', function (req, res) {
     const spec = loadSpec(program.args[0]);
     res.send(spec);
@@ -55,7 +53,7 @@ function startServer(program) {
         logLevel: 'silent',
         open: false,
       }, function() {
-        console.log(`Server listening on port ${port}!`);
+        console.log(`Server listening on http://localhost:${port}`);
       });
     })
     .on('error', function(e) {
