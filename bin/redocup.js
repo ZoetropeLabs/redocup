@@ -63,7 +63,7 @@ function startServer(program) {
   }
   else {
     app.listen(port, function () {
-      console.log(`Server listening on port ${port}!`);
+      console.log(`Server listening on http://localhost:${port}`);
     })
     .on('error', function(e) {
       console.error('failed to start server: ' + e.message);
